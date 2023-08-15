@@ -1,6 +1,6 @@
 <p align="center">
   <a target="_blank" href="https://jshub.cn/">
-  <img alt="special sponsor appwrite" src="./autoCharts.png" width="300">
+  <img alt="autoCharts" src="https://raw.githubusercontent.com/LarryZhu-dev/autocharts.js/master/autoCharts.png" width="300">
   </a>
 </p>
 
