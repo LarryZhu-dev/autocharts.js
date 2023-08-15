@@ -1,0 +1,18 @@
+{
+  "name": "autocharts.js",
+  "version": "1.0.0",
+  "description": "一个可以自动在复杂数据中分辨出可能适用于echarts的数据，并自动识别x\\y轴",
+  "main": "autocharts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "index.d.ts",
+  "keywords": [
+    "echarts",
+    "charts",
+    "autocharts",
+    "autocharts.js"
+  ],
+  "author": "Larry Zhu",
+  "license": "MIT"
+}

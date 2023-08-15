@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="chart"></div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="./test.js"></script>
+<script type="module">
+  import autoCharts from "../autocharts.js";
+  let autoData = autoCharts.findChartData({
+    rawData: data1.gridCountVos,
+    xKey: "col3",
+    yKey: "levelCount",
+    type: "pie",
+  });
+  // let autoData = autoCharts.findChartData({
+  //   rawData: data,
+  //   xKey: "dataTimes",
+  // });
+  console.log("autoData::: ", autoData);
+  let myChart = echarts.init(document.querySelector("#chart"));
+  let option = {
+    tooltip: {
+      trigger: "axis",
+    },
+    legend: autoData.legend,
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
+    },
+    xAxis: autoData.xAxis,
+    yAxis: {
+      type: "value",
+    },
+    series: autoData.series,
+  };
+  myChart.setOption(option);
+</script>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  #app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #chart {
+    width: 400px;
+    height: 400px;
+  }
+</style>
