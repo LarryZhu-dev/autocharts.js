@@ -8,7 +8,7 @@ const autoCharts = {
     if (Array.isArray(rawData)) {
       return handleArrayData(rawData, type, xKey, yKey);
     } else if (typeof rawData === 'object') {
-      return handleObjectData(rawData, type, xKey);
+      return handleObjectData(rawData, type, xKey, yKey);
     } else {
       console.error(`bad rawData type: ${typeof rawData}`);
       return;
@@ -42,7 +42,7 @@ function handleArrayData(rawData, type, xKey, yKey) {
   return charData;
 }
 
-function handleObjectData(rawData, type, xKey) {
+function handleObjectData(rawData, type, xKey, yKey) {
   const lengths = Object.values(rawData)
     .filter(value => Array.isArray(value))
     .map(value => value.length);
@@ -61,7 +61,7 @@ function handleObjectData(rawData, type, xKey) {
           type: 'category',
           data: value,
         };
-      } else if (typeof value[0] === 'number') {
+      } else if (typeof value[0] === 'number' || key === yKey) {
         charData.series.push({
           type: type,
           data: value,
