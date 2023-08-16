@@ -16,16 +16,15 @@
 <script src="./test.js"></script>
 <script type="module">
   import autoCharts from "../autocharts.js";
-  let autoData = autoCharts.findChartData({
-    rawData: data1.gridCountVos,
-    xKey: "col3",
-    yKey: "levelCount",
-    type: "pie",
-  });
   // let autoData = autoCharts.findChartData({
-  //   rawData: data,
-  //   xKey: "dataTimes",
+  //   rawData: data1.gridCountVos,
+  //   xKey: "col3",
+  //   yKey: "levelCount",
+  //   type: "pie",
   // });
+  let autoData = autoCharts.findChartData({
+    rawData: data,
+  });
   console.log("autoData::: ", autoData);
   let myChart = echarts.init(document.querySelector("#chart"));
   let option = {

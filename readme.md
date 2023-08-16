@@ -7,6 +7,7 @@
 <p align="center">
   <h3 align="center">autocharts.js</h3>
 </p>
+
 ### 简介
 
 autocharts.js 可以帮助你在不规范的数据中找出可用于 echarts 的数据，并返回符合echarts要求的基本格式。
